@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+            <!-- Database connection settings -->
+
+        <property name="connection.url">jdbc:postgresql://localhost:5432/reservation</property> <!-- BD Mane -->
+        <property name="connection.driver_class">org.postgresql.Driver</property> <!-- DB Driver -->
+        <property name="connection.username">postgres</property> <!-- DB User -->
+        <property name="connection.password">admin</property> <!-- DB Password -->
+
+        <!-- Drop and re-create the database schema on startup / Update the same DB /validate -->
+
+        <!-- <property name="dialect">org.hibernate.dialect.PostgreSQL82Dialect</property> -->
+        <property name="hbm2ddl.auto">update</property> <!-- create / create-drop / update -->
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <property name="show_sql">true</property> <!-- Show SQL in console -->
+
+        <property name="format_sql">true</property> <!-- Show SQL formatted -->
+		<!-- Enities to map -->
+		<mapping class="org.example.model.Etudiant" />
+
+	</session-factory>
+
+</hibernate-configuration>
